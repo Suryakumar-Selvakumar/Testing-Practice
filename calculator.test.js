@@ -36,13 +36,25 @@ test("subtract function works (ex-3)", () => {
 });
 
 test("multiply function works (ex-1)", () => {
-    expect(calculator.multiply(2, 3)).toBe(6);
+  expect(calculator.multiply(2, 3)).toBe(6);
 });
 
-test("multiply function works (ex-1)", () => {
-    expect(calculator.multiply(54, 37)).toBe(1998);
+test("multiply function works (ex-2)", () => {
+  expect(calculator.multiply(54, 37)).toBe(1998);
 });
 
-test("multiply function works (ex-1)", () => {
-    expect(calculator.multiply(643, 999)).toBe(642357);
-})
+test("multiply function works (ex-3)", () => {
+  expect(calculator.multiply(643, 999)).toBe(642357);
+});
+
+test("Divide function works (ex-1)", () => {
+  expect(calculator.divide(2, 3)).toBeCloseTo(0.67);
+});
+
+test("Divide function works (ex-2)", () => {
+  expect(calculator.divide(54, 37)).toBeCloseTo(1.459);
+});
+
+test("Divide function works (ex-3)", () => {
+  expect(calculator.divide(643, 999)).toBeCloseTo(0.64);
+});
