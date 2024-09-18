@@ -22,3 +22,15 @@ test("add function works (ex-2)", () => {
 test("add function works (ex-3)", () => {
   expect(calculator.add(643, 999)).toBe(1642);
 });
+
+test("subtract function works (ex-1)", () => {
+    expect(calculator.subtract(2, 3)).toBe(-1);
+})
+
+test("subtract function works (ex-2)", () => {
+    expect(calculator.subtract(54, 37)).toBe(17);
+  });
+
+test("subtract function works (ex-3)", () => {
+    expect(calculator.subtract(643, 999)).toBe(-356);
+  });
