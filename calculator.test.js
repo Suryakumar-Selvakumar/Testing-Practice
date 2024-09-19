@@ -1,60 +1,46 @@
 import { calculator } from "./calculator.js";
 
-test("Calculator exists", () => {
-  expect(calculator).toBeDefined();
-});
+describe("Calculator", () => {
+  it("exists", () => {
+    expect(calculator).toBeDefined();
+  });
 
-test("add, subtract, multiply, divide funcs exist", () => {
-  expect(calculator.add).toBeDefined();
-  expect(calculator.subtract).toBeDefined();
-  expect(calculator.multiply).toBeDefined();
-  expect(calculator.divide).toBeDefined();
-});
+  it("add, subtract, multiply, divide functions exist", () => {
+    expect(calculator.add).toBeDefined();
+    expect(calculator.subtract).toBeDefined();
+    expect(calculator.multiply).toBeDefined();
+    expect(calculator.divide).toBeDefined();
+  });
 
-test("add function works (ex-1)", () => {
-  expect(calculator.add(2, 3)).toBe(5);
-});
+  it.each([
+    [2, 3, 5],
+    [54, 37, 91],
+    [643, 999, 1642],
+  ])(".add(%i, %i) works and returns %i", (a, b, expected) => {
+    expect(calculator.add(a, b)).toBe(expected);
+  });
 
-test("add function works (ex-2)", () => {
-  expect(calculator.add(54, 37)).toBe(91);
-});
+  it.each([
+    [2, 3, -1],
+    [54, 37, 17],
+    [643, 999, -356],
+  ])(".subtract(%i, %i) works and returns %i", (a, b, expected) => {
+    expect(calculator.subtract(a, b)).toBe(expected);
+  });
 
-test("add function works (ex-3)", () => {
-  expect(calculator.add(643, 999)).toBe(1642);
-});
+  it.each([
+    [2, 3, 6],
+    [54, 37, 1998],
+    [643, 999, 642357],
+  ])(".Multiply(%i, %i) works and returns %i", (a, b, expected) => {
+    expect(calculator.multiply(a, b)).toBe(expected);
+  });
 
-test("subtract function works (ex-1)", () => {
-  expect(calculator.subtract(2, 3)).toBe(-1);
-});
-
-test("subtract function works (ex-2)", () => {
-  expect(calculator.subtract(54, 37)).toBe(17);
-});
-
-test("subtract function works (ex-3)", () => {
-  expect(calculator.subtract(643, 999)).toBe(-356);
-});
-
-test("multiply function works (ex-1)", () => {
-  expect(calculator.multiply(2, 3)).toBe(6);
-});
-
-test("multiply function works (ex-2)", () => {
-  expect(calculator.multiply(54, 37)).toBe(1998);
-});
-
-test("multiply function works (ex-3)", () => {
-  expect(calculator.multiply(643, 999)).toBe(642357);
-});
-
-test("Divide function works (ex-1)", () => {
-  expect(calculator.divide(2, 3)).toBeCloseTo(0.67);
-});
-
-test("Divide function works (ex-2)", () => {
-  expect(calculator.divide(54, 37)).toBeCloseTo(1.459);
-});
-
-test("Divide function works (ex-3)", () => {
-  expect(calculator.divide(643, 999)).toBeCloseTo(0.64);
+  it.each([
+    [2, 3, 0.67],
+    [54, 37, 1.459],
+    [643, 999, 0.64],
+  ])(".Divide(%i, %i) works and returns %i", (a, b, expected) => {
+    expect(calculator.divide(a, b)).toBeCloseTo(expected);
+  });
 });
