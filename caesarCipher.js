@@ -2,7 +2,7 @@ export function caesarCipher(string, shift) {
   const alphabets = "abcdefghijklmnopqrstuvwxyz".split("");
   const shiftedArray = [];
   let shiftedStr = "";
-
+  const nonAlpha = new RegExp("[^a-zA-Z0-9]");
   string.split("").forEach((element) => {
     for (let i = 0; i < alphabets.length; i++) {
       if (element.toLowerCase() == alphabets[i]) {
@@ -20,6 +20,9 @@ export function caesarCipher(string, shift) {
             shiftedStr += alphabets[i + shift];
           }
         }
+      } else if (nonAlpha.test(element)) {
+        shiftedStr += element;
+        break;
       }
     }
   });

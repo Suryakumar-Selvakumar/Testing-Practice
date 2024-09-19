@@ -23,3 +23,12 @@ test("caesarCipher returns the shifted string (ex-3)", () => {
 test("caesarCipher returns the shifted string with the same case", () => {
   expect(caesarCipher("HeLLo", 3)).toMatch("KhOOr");
 });
+
+test("caesarCipher returns the shifted string with punctuation (ex-1)", () => {
+  expect(caesarCipher('Hello, World!', 3)).toMatch("Khoor, Zruog!");
+});
+
+test("caesarCipher returns the shifted string with punctuation (ex-2)", () => {
+  expect(caesarCipher('Hello,, World!', 3)).toMatch("Khoor,, Zruog!");
+});
+
