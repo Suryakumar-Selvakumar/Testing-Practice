@@ -31,4 +31,18 @@ test("analyzeArray returns the average of nos. from array", () => {
   expect(analyzeArray([3, 4, 5, 6, 7, 8]).min).toBeCloseTo(3);
 });
 
+test("analyzeArray returns the average of nos. from array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6]).max).toEqual(8);
+});
 
+test("analyzeArray returns the average of nos. from array", () => {
+  expect(analyzeArray([3, 4, 5, 6, 7, 11]).max).toEqual(11);
+});
+
+test("analyzeArray returns the average of nos. from array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6]).length).toEqual(6);
+});
+
+test("analyzeArray returns the average of nos. from array", () => {
+  expect(analyzeArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).length).toEqual(10);
+});

@@ -4,7 +4,7 @@ export function analyzeArray(numArr) {
       ? null
       : numArr.reduce((acc, curVal) => acc + curVal) / numArr.length,
     min: !numArr ? null : numArr.sort()[0],
-    max: null,
-    length: null,
+    max: !numArr ? null : numArr.sort((a, b) => b - a)[0],
+    length: !numArr ? null : numArr.length,
   };
 }
