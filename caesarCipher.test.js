@@ -20,6 +20,6 @@ test("caesarCipher returns the shifted string (ex-3)", () => {
   expect(caesarCipher("xyz", 3)).toMatch("abc");
 });
 
-test("caesarCipher returns the shifted string (ex-3)", () => {
-  expect(caesarCipher("xyz", 4)).toMatch("bcd");
+test("caesarCipher returns the shifted string with the same case", () => {
+  expect(caesarCipher("HeLLo", 3)).toMatch("KhOOr");
 });

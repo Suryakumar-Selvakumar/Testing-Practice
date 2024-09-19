@@ -5,11 +5,20 @@ export function caesarCipher(string, shift) {
 
   string.split("").forEach((element) => {
     for (let i = 0; i < alphabets.length; i++) {
-      if (element == alphabets[i]) {
+      if (element.toLowerCase() == alphabets[i]) {
         if (i + shift >= alphabets.length) {
-          shiftedStr += alphabets[shift - (alphabets.length - i)];
+          if (element === element.toUpperCase()) {
+            shiftedStr +=
+              alphabets[shift - (alphabets.length - i)].toUpperCase();
+          } else {
+            shiftedStr += alphabets[shift - (alphabets.length - i)];
+          }
         } else {
-          shiftedStr += alphabets[i + shift];
+          if (element === element.toUpperCase()) {
+            shiftedStr += alphabets[i + shift].toUpperCase();
+          } else {
+            shiftedStr += alphabets[i + shift];
+          }
         }
       }
     }
